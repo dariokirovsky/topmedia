@@ -1,153 +1,738 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Oswald', sans-serif;
-    background-color: #000000;
-    color: white;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zm20.97 0l9.315 9.314-1.414 1.414L34.828 0h2.83zM22.344 0L13.03 9.314l1.414 1.414L25.172 0h-2.83zM32 0l12.142 12.142-1.414 1.414L30 .828 17.272 13.556l-1.414-1.414L28 0h4zM.284 0l28 28-1.414 1.414L0 2.544V0h.284zM0 5.373l25.456 25.455-1.414 1.415L0 8.2V5.374zm0 5.656l22.627 22.627-1.414 1.414L0 13.86v-2.83zm0 5.656l19.8 19.8-1.415 1.413L0 19.514v-2.83zm0 5.657l16.97 16.97-1.414 1.415L0 25.172v-2.83zM0 28l14.142 14.142-1.414 1.414L0 30.828V28zm0 5.657L11.314 44.97 9.9 46.386l-9.9-9.9v-2.828zm0 5.657L8.485 47.8 7.07 49.212 0 42.143v-2.83zm0 5.657l5.657 5.657-1.414 1.415L0 47.8v-2.83zm0 5.657l2.828 2.83-1.414 1.413L0 53.456v-2.83zM54.627 60L30 35.373 5.373 60H8.2L30 38.2 51.8 60h2.827zm-5.656 0L30 41.03 11.03 60h2.828L30 43.858 46.142 60h2.83zm-5.656 0L30 46.686 16.686 60h2.83L30 49.515 40.485 60h2.83zm-5.657 0L30 52.343 22.343 60h2.83L30 55.172 34.828 60h2.83zM32 60l-2-2-2 2h4zM59.716 0l-28 28 1.414 1.414L60 2.544V0h-.284zM60 5.373L34.544 30.828l1.414 1.415L60 8.2V5.374zm0 5.656L37.373 33.656l1.414 1.414L60 13.86v-2.83zm0 5.656l-19.8 19.8 1.415 1.413L60 19.514v-2.83zm0 5.657l-16.97 16.97 1.414 1.415L60 25.172v-2.83zM60 28L45.858 42.142l1.414 1.414L60 30.828V28zm0 5.657L48.686 44.97l1.415 1.415 9.9-9.9v-2.828zm0 5.657L51.515 47.8l1.414 1.413 7.07-7.07v-2.83zm0 5.657l-5.657 5.657 1.414 1.415L60 47.8v-2.83zm0 5.657l-2.828 2.83 1.414 1.413L60 53.456v-2.83zM39.9 16.385l1.414-1.414L30 3.658 18.686 14.97l1.415 1.415 9.9-9.9 9.9 9.9zm-2.83 2.828l1.415-1.414L30 9.313 21.515 17.8l1.414 1.413 7.07-7.07 7.07 7.07zm-2.827 2.83l1.414-1.416L30 14.97l-5.657 5.657 1.414 1.415L30 17.8l4.243 4.242zm-2.83 2.827l1.415-1.414L30 20.626l-2.828 2.83 1.414 1.414L30 23.456l1.414 1.414zM56.87 59.414L58.284 58 30 29.716 1.716 58l1.414 1.414L30 32.544l26.87 26.87z' fill='%23382d49' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
-    font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  background-color: #000000;
+  color: white;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zm20.97 0l9.315 9.314-1.414 1.414L34.828 0h2.83zM22.344 0L13.03 9.314l1.414 1.414L25.172 0h-2.83zM32 0l12.142 12.142-1.414 1.414L30 .828 17.272 13.556l-1.414-1.414L28 0h4zM.284 0l28 28-1.414 1.414L0 2.544V0h.284zM0 5.373l25.456 25.455-1.414 1.415L0 8.2V5.374zm0 5.656l22.627 22.627-1.414 1.414L0 13.86v-2.83zm0 5.656l19.8 19.8-1.415 1.413L0 19.514v-2.83zm0 5.657l16.97 16.97-1.414 1.415L0 25.172v-2.83zM0 28l14.142 14.142-1.414 1.414L0 30.828V28zm0 5.657L11.314 44.97 9.9 46.386l-9.9-9.9v-2.828zm0 5.657L8.485 47.8 7.07 49.212 0 42.143v-2.83zm0 5.657l5.657 5.657-1.414 1.415L0 47.8v-2.83zm0 5.657l2.828 2.83-1.414 1.413L0 53.456v-2.83zM54.627 60L30 35.373 5.373 60H8.2L30 38.2 51.8 60h2.827zm-5.656 0L30 41.03 11.03 60h2.828L30 43.858 46.142 60h2.83zm-5.656 0L30 46.686 16.686 60h2.83L30 49.515 40.485 60h2.83zm-5.657 0L30 52.343 22.343 60h2.83L30 55.172 34.828 60h2.83zM32 60l-2-2-2 2h4zM59.716 0l-28 28 1.414 1.414L60 2.544V0h-.284zM60 5.373L34.544 30.828l1.414 1.415L60 8.2V5.374zm0 5.656L37.373 33.656l1.414 1.414L60 13.86v-2.83zm0 5.656l-19.8 19.8 1.415 1.413L60 19.514v-2.83zm0 5.657l-16.97 16.97 1.414 1.415L60 25.172v-2.83zM60 28L45.858 42.142l1.414 1.414L60 30.828V28zm0 5.657L48.686 44.97l1.415 1.415 9.9-9.9v-2.828zm0 5.657L51.515 47.8l1.414 1.413 7.07-7.07v-2.83zm0 5.657l-5.657 5.657 1.414 1.415L60 47.8v-2.83zm0 5.657l-2.828 2.83 1.414 1.413L60 53.456v-2.83zM39.9 16.385l1.414-1.414L30 3.658 18.686 14.97l1.415 1.415 9.9-9.9 9.9 9.9zm-2.83 2.828l1.415-1.414L30 9.313 21.515 17.8l1.414 1.413 7.07-7.07 7.07 7.07zm-2.827 2.83l1.414-1.416L30 14.97l-5.657 5.657 1.414 1.415L30 17.8l4.243 4.242zm-2.83 2.827l1.415-1.414L30 20.626l-2.828 2.83 1.414 1.414L30 23.456l1.414 1.414zM56.87 59.414L58.284 58 30 29.716 1.716 58l1.414 1.414L30 32.544l26.87 26.87z' fill='%23382d49' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  font-size: 16px;
 }
 
 a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 .principal {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
 }
 
 /* NAVEGACION */
 .nav-item {
-    width: 135px;
-
+  width: 135px;
 }
-
 .nav-item .nav-link {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .nav-logotopmedia {
-    width: 200px;
-    height: 120px;
+  width: 200px;
+  height: 120px;
 }
 
-h1{
-    font-size: 1px;
-    color:transparent;
+h1 {
+  font-size: 1px;
+  color: transparent;
 }
 
 /* ARTICULOS EN LA INDEX */
-
-
 .card-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 25px;
+  margin: 25px;
+  font-size: 16px;
+}
+
+.card {
+  background-color: #381835;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235e4585' fill-opacity='0.3' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  border-radius: 15px;
+  text-shadow: -5px -5px 5px #000;
+  font-size: 15px;
+}
+.card h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+.card h3 {
+  text-align: center;
+  font-style: italic;
+}
+.card p {
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card1 .card2 .card3 .card4 {
+  height: 30px;
+  width: 100%;
+}
+
+/* BANNER DE REPRODUCCIONES Y SUSCRIPTORES */
+.banner {
+  width: 90%;
+  height: 100px;
+  background: url(img/banner.jpg) no-repeat center center/cover;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.8;
+  text-shadow: -5px -2px 1px #000;
+}
+.banner h2 {
+  animation-duration: 10s;
+  animation-name: aparecer;
+}
+
+footer {
+  text-align: center;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.div1 {
+  grid-area: 1/1/2/2;
+}
+
+.div2 {
+  grid-area: 1/2/2/3;
+}
+
+.div3 {
+  grid-area: 1/3/2/4;
+}
+
+.container-fluid {
+  padding-top: 20px;
+  background-image: url(img/redes.jpg);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 20px;
+}
+
+.tituloRedes {
+  grid-area: 1/1/2/4;
+  font-size: 25px;
+}
+
+.container-fluid .tituloRedes h2 {
+  font-size: 55px;
+  text-shadow: -5px -5px 5px #000;
+}
+
+.spotify {
+  grid-area: 2/1/5/2;
+  height: 380px;
+  width: 300px;
+}
+
+.twitter {
+  grid-area: 2/2/5/3;
+  border-style: groove;
+  overflow-y: scroll;
+  height: 380px;
+  width: 300px;
+}
+
+.instagram {
+  grid-area: 2/3/5/4;
+  border-style: groove;
+  overflow-y: scroll;
+  height: 380px;
+  width: 300px;
+}
+
+/*SECCION CONTACTO*/
+.contacto {
+  width: 90%;
+  margin: auto;
+}
+
+fieldset {
+  text-align: center;
+}
+
+fieldset h2 {
+  text-decoration: underline;
+}
+
+.formContacto {
+  background-color: #1a1919;
+  border-radius: 25px;
+  border-style: groove;
+}
+
+/*SECCION ARTISTAS*/
+.artistas {
+  width: 90%;
+  margin: auto;
+}
+
+.fotosartistas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 50px;
+  padding: 50px;
+}
+.fotosartistas img:hover {
+  transform: scale(1.1);
+}
+
+.artista1 {
+  grid-area: 1/1/2/2;
+  animation-name: dalila;
+  animation-duration: 3s;
+}
+
+@keyframes dalila {
+  0% {
+    border-radius: 0;
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    border-radius: 75px;
+    transform: translateX(0px);
+  }
+}
+.artista2 {
+  grid-area: 1/2/2/3;
+  animation-name: damianperez;
+  animation-duration: 3s;
+}
+
+@keyframes damianperez {
+  0% {
+    border-radius: 0;
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    border-radius: 75px;
+    transform: translateY(0px);
+  }
+}
+.artista3 {
+  grid-area: 1/3/2/4;
+  animation-name: kilates;
+  animation-duration: 3s;
+}
+
+@keyframes kilates {
+  0% {
+    border-radius: 0;
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    border-radius: 75px;
+    transform: translateX(0px);
+  }
+}
+.artista4 {
+  grid-area: 2/1/3/2;
+  animation-name: brian;
+  animation-duration: 3s;
+}
+
+@keyframes brian {
+  0% {
+    border-radius: 0;
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    border-radius: 75px;
+    transform: translateX(0px);
+  }
+}
+.artista5 {
+  grid-area: 2/2/3/3;
+  animation-name: commanche;
+  animation-duration: 3s;
+}
+
+@keyframes commanche {
+  0% {
+    border-radius: 0;
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    border-radius: 75px;
+    transform: translateY(0px);
+  }
+}
+.artista6 {
+  grid-area: 2/3/3/4;
+  animation-name: grupoplay;
+  animation-duration: 3s;
+}
+
+@keyframes grupoplay {
+  0% {
+    border-radius: 0;
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    border-radius: 75px;
+    transform: translateX(0px);
+  }
+}
+/*SECCION NOVEDADES*/
+.novedades {
+  width: 90%;
+  margin: auto;
+}
+.novedades h3 {
+  text-align: center;
+}
+
+.noticiaPrincipal {
+  background-color: #1a1919;
+  opacity: 0.9;
+  border-radius: 19px;
+  border-style: groove;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.noticia {
+  text-align: center;
+}
+.noticia img {
+  width: 80%;
+  animation-name: lula;
+  animation-duration: 3s;
+}
+
+@keyframes lula {
+  0% {
+    border-radius: 15px;
+    transform: translateY(-150px);
+  }
+  100% {
+    border-radius: 15px;
+    transform: translateY(0px);
+  }
+}
+.novedades section table {
+  width: 90%;
+  color: white;
+  text-align: center;
+}
+
+.novedades section table td {
+  text-align: center;
+}
+.novedades section table th {
+  text-align: center;
+}
+
+/*SECCION PARTNERS*/
+.divPartners {
+  background-color: #1a1919;
+  width: 90%;
+  border-radius: 25px;
+  border-style: groove;
+  margin-top: 30px;
+}
+.divPartners h2 {
+  text-decoration: underline;
+}
+.divPartners h3,
+.divPartners p {
+  text-align: center;
+}
+
+.fotospartners {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin-bottom: 50px;
+}
+
+.fotospartners:hover {
+  transform: scale(1.1);
+}
+
+.partner1 {
+  grid-area: 1/1/2/2;
+}
+
+.partner2 {
+  grid-area: 1/2/2/3;
+}
+
+.partner3 {
+  grid-area: 1/3/2/4;
+}
+
+.partner4 {
+  grid-area: 1/4/2/5;
+}
+
+.partner5 {
+  grid-area: 2/1/3/2;
+}
+
+.partner6 {
+  grid-area: 2/2/3/3;
+}
+
+.partner7 {
+  grid-area: 2/3/3/4;
+}
+
+.partner8 {
+  grid-area: 2/4/3/5;
+}
+
+.partners h2 {
+  text-align: center;
+}
+
+/*MEDIA QUERYS*/
+@media only screen and (min-width: 320px) {
+  .navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent !important;
+  }
+
+  .navbar-brand {
+    font-size: 30px;
+    padding-left: 75px;
+  }
+
+  .nav-logotopmedia {
+    width: 100px;
+    height: 90px;
+  }
+
+  .navbar-toggler-icon {
+    background-color: transparent;
+  }
+
+  .imagenprincipal {
+    width: 650px;
+  }
+
+  .card-group {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 25px;
     margin: 25px;
     font-size: 16px;
-
-}
-
-.card {
+    text-align: center;
     background-color: #381835;
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235e4585' fill-opacity='0.3' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     border-radius: 15px;
     text-shadow: -5px -5px 5px #000;
-    font-size: 15px;
-}
+    display: flex;
+    flex-direction: column;
+  }
+  .card-group h2 {
+    text-decoration: underline;
+  }
 
-.card:hover {
-    transform: scale(1.1);
-}
+  /* BANNER DE REPRODUCCIONES Y SUSCRIPTORES*/
+  .banner {
+    width: 300px;
+    height: 300px;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+  }
+  .banner h2 {
+    font-size: 25px;
+    text-align: center;
+  }
+  .banner hr {
+    width: 230px;
+  }
 
-.card h2 {
+  .container-fluid {
+    padding-top: 20px;
+    background-image: url(img/redes.jpg);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .tituloRedes {
+    font-size: 35px;
+    padding-bottom: 10px;
+  }
+  .tituloRedes h2 {
+    font-size: 55px;
+    text-shadow: -5px -5px 5px #000;
+  }
+
+  .spotify {
+    height: 250px;
+    width: 230px;
+  }
+
+  .twitter {
+    border-style: groove;
+    overflow-y: scroll;
+    height: 250px;
+    width: 230px;
+  }
+
+  .instagram {
+    border-style: groove;
+    overflow-y: scroll;
+    height: 250px;
+    width: 230px;
+  }
+
+  /*SECCION ARTISTAS*/
+  .fotosartistas {
+    display: flex;
+    flex-direction: column;
+  }
+  .fotosartistas div {
+    width: 200px;
+  }
+  .fotosartistas div img {
+    height: 200px;
+    width: 200px;
+  }
+
+  /*SECCION CONTACTO*/
+  .formContacto {
+    width: 100%;
+    font-size: 10px;
+  }
+
+  fieldset {
+    width: 100%;
+    font-size: 25px;
+  }
+
+  /*SECCION PARTNERS  */
+  .fotospartners {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .imagenprincipal {
+    width: 650px;
+  }
+
+  .contenedorart {
+    width: 600px;
+  }
+
+  .banner {
+    width: 100%;
+    height: 200px;
+    flex-wrap: wrap;
+  }
+  .banner hr {
+    width: 100%;
+  }
+
+  .container-fluid {
+    padding-left: 20%;
+  }
+
+  .container-fluid .tituloRedes h2 {
+    font-size: 30px;
+  }
+
+  /*SECCION ARTISTAS*/
+  .fotosartistas {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 75px;
+  }
+  .fotosartistas div img {
+    height: 200px;
+    width: 200px;
+  }
+
+  /*SECCION PARTNERS*/
+  .divPartners {
+    margin-left: 30px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .imagenprincipal {
+    width: 90%;
+  }
+
+  .contenedorart {
+    width: 90%;
+  }
+
+  .banner {
+    width: 700px;
+    height: 200px;
+    flex-wrap: wrap;
+  }
+  .banner hr {
+    width: 650px;
+  }
+
+  /* NAVEGACION */
+  .nav-item {
+    width: 80px;
+  }
+
+  .nav-item .nav-link {
+    font-size: 18px;
+  }
+
+  .container-fluid {
+    padding-left: 250px;
+  }
+
+  /*SECCION ARTISTAS*/
+  .fotosartistas {
+    margin-left: 1px;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(3, 1fr) 0.5fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+  .artista1 {
+    grid-area: 1/2/2/3;
+  }
+
+  .artista2 {
+    grid-area: 1/3/2/4;
+  }
+
+  .artista3 {
+    grid-area: 1/4/2/5;
+  }
+
+  .artista4 {
+    grid-area: 2/2/3/3;
+  }
+
+  .artista5 {
+    grid-area: 2/3/3/4;
+  }
+
+  .artista6 {
+    grid-area: 2/4/3/5;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* NAVEGACION */
+  .nav-item {
+    width: 145px;
+  }
+
+  .nav-item .nav-link {
+    font-size: 20px;
+  }
+
+  ul li a {
+    color: white !important;
+  }
+
+  .navbar ul {
+    padding-right: 120px;
+  }
+
+  .nav-logotopmedia {
+    width: 220px;
+    height: 150px;
+  }
+
+  .navbar-toggler-icon {
+    background-color: white;
+  }
+
+  .imagenprincipal {
+    width: 1220px;
+  }
+
+  .card-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 25px;
+    margin: 25px;
+    font-size: 26px;
+  }
+
+  .card-title {
     text-align: center;
     text-decoration: underline;
-}
+    font-size: 30px;
+  }
 
-.card h3 {
+  .card p {
     text-align: center;
-    font-style: italic;
+  }
 
-}
-
-.card p {
-    text-align: center;
-}
-
-.card1 .card2 .card3 .card4 {
+  .card1 .card2 .card3 .card4 {
     height: 30px;
-    width: 100%;
-}
+    width: 50px;
+  }
 
-
-/* BANNER DE REPRODUCCIONES Y SUSCRIPTORES */
-
-.banner {
-    width: 90%;
-    height: 100px;
-    background: url(img/banner.jpg) no-repeat center center/cover;
-    border-radius: 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    text-align: center;
-    display: flex;
+  .banner {
+    width: 1200px;
+    height: 200px;
     flex-direction: row;
-    padding: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    opacity: .8;
-    text-shadow: -5px -2px 1px #000;
-}
+  }
+  .banner hr {
+    width: 320px;
+  }
+  .banner h2 {
+    font-size: 30px;
+  }
 
-.banner h2 {
-    animation-duration: 10s;
-    animation-name: aparecer;
-}
-
-footer {
-    text-align: center;
-}
-
-
-
-@keyframes aparecer {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-
-
-.div1 {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.div2 {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.div3 {
-    grid-area: 1 / 3 / 2 / 4;
-}
-
-.container-fluid {
+  .container-fluid {
     padding-top: 20px;
     background-image: url(img/redes.jpg);
     border-radius: 15px;
@@ -157,284 +742,63 @@ footer {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     padding: 20px;
+  }
 
-}
+  .tituloRedes {
+    grid-area: 1/1/2/4;
+    font-size: 65px;
+    padding-bottom: 10px;
+  }
 
-.tituloRedes {
-    grid-area: 1 / 1 / 2 / 4;
-    font-size: 25px;
-}
-
-.container-fluid .tituloRedes h2 {
-    font-size: 55px;
+  .container-fluid .tituloRedes h2 {
+    font-size: 65px;
     text-shadow: -5px -5px 5px #000;
-}
+  }
 
-.spotify {
-    grid-area: 2 / 1 / 5 / 2;
-    height: 380px;
-    width: 300px;
-}
+  .spotify {
+    grid-area: 2/1/5/2;
+    height: 450px;
+    width: 380px;
+  }
 
-.twitter {
-    grid-area: 2 / 2 / 5 / 3;
+  .twitter {
+    grid-area: 2/2/5/3;
     border-style: groove;
     overflow-y: scroll;
-    height: 380px;
-    width: 300px;
+    height: 450px;
+    width: 380px;
+  }
 
-}
-
-.instagram {
-    grid-area: 2 / 3 / 5 / 4;
+  .instagram {
+    grid-area: 2/3/5/4;
     border-style: groove;
     overflow-y: scroll;
-    height: 380px;
+    height: 450px;
+    width: 380px;
+  }
+
+  /*SECCION CONTACTO*/
+  .formContacto {
+    width: 1200px;
+  }
+
+  fieldset {
     width: 300px;
-}
+  }
 
-
-
-
-/*SECCION CONTACTO*/
-
-.contacto {
-    width: 90%;
-    margin: auto;
-}
-
-fieldset {
-    text-align: center;
-}
-
-fieldset h2 {
-    text-decoration: underline;
-}
-
-.formContacto {
-    background-color: rgb(26, 25, 25);
+  /*SECCION ARTISTAS*/
+  .fotosartistas {
+    background-color: #1a1919;
     border-radius: 25px;
     border-style: groove;
-}
+  }
 
-/*SECCION ARTISTAS*/
-.artistas {
-    width: 90%;
-    margin: auto;
-}
+  /*SECCION PARTNERS*/
+  .partners {
+    margin-left: 55px;
+  }
 
-.fotosartistas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 50px;
-    padding: 50px;
-}
-
-.fotosartistas img:hover {
-    transform: scale(1.1);
-}
-
-.artista1 {
-    grid-area: 1 / 1 / 2 / 2;
-    animation-name: dalila;
-    animation-duration: 3s;
-}
-
-@keyframes dalila {
-    0% {
-        border-radius: 0;
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    100% {
-        border-radius: 75px;
-        transform: translateX(0px);
-    }
-
-}
-
-.artista2 {
-    grid-area: 1 / 2 / 2 / 3;
-    animation-name: damianperez;
-    animation-duration: 3s;
-}
-
-@keyframes damianperez {
-    0% {
-        border-radius: 0;
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-
-    100% {
-        border-radius: 75px;
-        transform: translateY(0px);
-    }
-
-}
-
-.artista3 {
-    grid-area: 1 / 3 / 2 / 4;
-    animation-name: kilates;
-    animation-duration: 3s;
-}
-
-@keyframes kilates {
-    0% {
-        border-radius: 0;
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    100% {
-        border-radius: 75px;
-        transform: translateX(0px);
-    }
-
-}
-
-.artista4 {
-    grid-area: 2 / 1 / 3 / 2;
-    animation-name: brian;
-    animation-duration: 3s;
-}
-
-@keyframes brian {
-    0% {
-        border-radius: 0;
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    100% {
-        border-radius: 75px;
-        transform: translateX(0px);
-    }
-
-}
-
-.artista5 {
-    grid-area: 2 / 2 / 3 / 3;
-    animation-name: commanche;
-    animation-duration: 3s;
-}
-
-@keyframes commanche {
-    0% {
-        border-radius: 0;
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-
-    100% {
-        border-radius: 75px;
-        transform: translateY(0px);
-    }
-
-}
-
-.artista6 {
-    grid-area: 2 / 3 / 3 / 4;
-    animation-name: grupoplay;
-    animation-duration: 3s;
-}
-
-@keyframes grupoplay {
-    0% {
-        border-radius: 0;
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    100% {
-        border-radius: 75px;
-        transform: translateX(0px);
-    }
-
-}
-
-/*SECCION NOVEDADES*/
-.novedades {
-    width: 90%;
-    margin: auto;
-}
-
-
-.novedades h3 {
-    text-align: center;
-}
-
-.noticiaPrincipal {
-    background-color: rgb(26, 25, 25);
-    opacity: 0.9;
-    border-radius: 19px;
-    border-style: groove;
-    margin-bottom: 40px;
-    margin-top: 40px;
-    width: 100%;
-}
-
-.noticia {
-    text-align: center;
-}
-
-.noticia img {
-    width: 80%;
-    animation-name:lula;
-    animation-duration: 3s;
-    }
-
-    @keyframes lula {
-        0% {
-            border-radius: 15px;
-            transform: translateY(-150px);
-        }
-    
-        100% {
-            border-radius: 15px;
-            transform: translateY(0px);
-        }
-    
-    }
-.novedades section table {
-    width: 90%;
-    color: white;
-    text-align: center;
-
-}
-
-.novedades section table td {
-    text-align: center;
-
-}
-
-.novedades section table th {
-    text-align: center;
-}
-
-
-/*SECCION PARTNERS*/
-.divPartners {
-    background-color: rgb(26, 25, 25);
-    width: 90%;
-    border-radius: 25px;
-    border-style: groove;
-    margin-top: 30px;
-}
-
-.divPartners h2 {
-    text-decoration: underline;
-}
-
-.divPartners h3,
-p {
-    text-align: center;
-}
-
-.fotospartners {
+  .fotospartners {
     text-align: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -442,460 +806,11 @@ p {
     grid-column-gap: 15px;
     grid-row-gap: 15px;
     margin-bottom: 50px;
+  }
+
+  .fotospartners:hover {
+    transform: scale 1.1;
+  }
 }
 
-.fotospartners:hover {
-    transform: scale(1.1);
-}
-
-.partner1 {
-    grid-area: 1 / 1 / 2 / 2;
-
-}
-
-.partner2 {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.partner3 {
-    grid-area: 1 / 3 / 2 / 4;
-}
-
-.partner4 {
-    grid-area: 1 / 4 / 2 / 5;
-}
-
-.partner5 {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-.partner6 {
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-.partner7 {
-    grid-area: 2 / 3 / 3 / 4;
-}
-
-.partner8 {
-    grid-area: 2 / 4 / 3 / 5;
-}
-
-.partners h2 {
-    text-align: center;
-}
-
-/*MEDIA QUERYS*/
-
-@media only screen and (min-width: 320px) {
-
-    .navbar {
-        padding-top: 0px;
-        padding-bottom: 0px;
-        background-color: transparent !important;
-    }
-
-    .navbar-brand {
-        font-size: 30px;
-        padding-left: 75px;
-    }
-
-    .nav-logotopmedia {
-        width: 100px;
-        height: 90px;
-    }
-
-    .navbar-toggler-icon {
-        background-color: transparent;
-    }
-
-    .imagenprincipal {
-        width: 650px;
-    }
-
-    .card-group {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-column-gap: 25px;
-        margin: 25px;
-        font-size: 16px;
-        text-align: center;
-
-    }
-
-    .card-group {
-        background-color: #381835;
-        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235e4585' fill-opacity='0.3' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-        border-radius: 15px;
-        text-shadow: -5px -5px 5px #000;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .card-group h2 {
-        text-decoration: underline;
-    }
-
-    /* BANNER DE REPRODUCCIONES Y SUSCRIPTORES*/
-    .banner {
-        width: 300px;
-        height: 300px;
-        flex-wrap: wrap;
-        padding-bottom: 50px;
-    }
-
-    .banner h2 {
-        font-size: 25px;
-        text-align: center;
-    }
-
-    .banner hr {
-        width: 230px;
-    }
-
-    .container-fluid {
-        padding-top: 20px;
-        background-image: url(img/redes.jpg);
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-
-    }
-
-    .tituloRedes {
-        font-size: 35px;
-        padding-bottom: 10px;
-    }
-
-    .tituloRedes h2 {
-        font-size: 55px;
-        text-shadow: -5px -5px 5px #000;
-    }
-
-    .spotify {
-        height: 250px;
-        width: 230px;
-    }
-
-    .twitter {
-        border-style: groove;
-        overflow-y: scroll;
-        height: 250px;
-        width: 230px;
-    }
-
-    .instagram {
-        border-style: groove;
-        overflow-y: scroll;
-        height: 250px;
-        width: 230px;
-    }
-
-    /*SECCION ARTISTAS*/
-
-    .fotosartistas {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .fotosartistas div {
-        width: 200px;
-    }
-
-    .fotosartistas div img {
-        height: 200px;
-        width: 200px;
-    }
-
-
-    /*SECCION CONTACTO*/
-    .formContacto {
-        width: 100%;
-        font-size: 10px;
-    }
-
-    fieldset {
-        width: 100%;
-    }
-
-    /*SECCION PARTNERS  */
-    .fotospartners {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    @media only screen and (min-width: 480px) {
-
-        .imagenprincipal {
-            width: 650px;
-        }
-
-        .contenedorart {
-            width: 600px;
-        }
-
-        .banner {
-            width: 100%;
-            height: 200px;
-            flex-wrap: wrap;
-        }
-
-        .banner hr {
-            width: 100%;
-        }
-
-        .container-fluid {
-            padding-left: 20%
-        }
-
-        .container-fluid .tituloRedes h2 {
-            font-size: 30px;
-        }
-
-        /*SECCION ARTISTAS*/
-
-        .fotosartistas {
-            width: 90%;
-            display: flex;
-            flex-wrap: wrap;
-            margin-left: 75px;
-
-        }
-
-        .fotosartistas div img {
-            height: 200px;
-            width: 200px;
-        }
-    }
-
-    /*SECCION PARTNERS*/
-
-    .divPartners {
-        margin-left: 30px;
-    }
-
-    @media only screen and (min-width: 768px) {
-
-        .imagenprincipal {
-            width: 90%;
-        }
-
-        .contenedorart {
-            width: 90%;
-        }
-
-        .banner {
-            width: 700px;
-            height: 200px;
-            flex-wrap: wrap;
-        }
-
-        .banner hr {
-            width: 650px;
-        }
-
-        /* NAVEGACION */
-        .nav-item {
-            width: 80px;
-        }
-
-        .nav-item .nav-link {
-            font-size: 18px;
-        }
-
-        .container-fluid{
-            padding-left: 250px;
-        }
-        /*SECCION ARTISTAS*/
-        .fotosartistas {
-            margin-left: 1px;
-            display: grid;
-            grid-template-columns: 0.5fr repeat(3, 1fr) 0.5fr;
-            grid-template-rows: repeat(2, 1fr);
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-        }
-
-        .artista1 {
-            grid-area: 1 / 2 / 2 / 3;
-        }
-
-        .artista2 {
-            grid-area: 1 / 3 / 2 / 4;
-        }
-
-        .artista3 {
-            grid-area: 1 / 4 / 2 / 5;
-        }
-
-        .artista4 {
-            grid-area: 2 / 2 / 3 / 3;
-        }
-
-        .artista5 {
-            grid-area: 2 / 3 / 3 / 4;
-        }
-
-        .artista6 {
-            grid-area: 2 / 4 / 3 / 5;
-        }
-
-        @media only screen and (min-width: 1200px) {
-
-            /* NAVEGACION */
-            .nav-item {
-                width: 145px;
-
-            }
-
-            .nav-item .nav-link {
-                font-size: 20px;
-            }
-
-            ul li a {
-                color: white !important;
-            }
-
-
-            .navbar ul {
-                padding-right: 120px;
-            }
-
-            .nav-logotopmedia {
-                width: 220px;
-                height: 150px;
-            }
-
-            .navbar-toggler-icon {
-                background-color: white;
-            }
-
-            .imagenprincipal {
-                width: 1220px;
-            }
-
-            .card-group {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-template-rows: 1fr;
-                grid-column-gap: 25px;
-                margin: 25px;
-                font-size: 26px;
-
-            }
-
-            .card-title {
-                text-align: center;
-                text-decoration: underline;
-                font-size: 30px;
-            }
-
-            .card p {
-                text-align: center;
-            }
-
-            .card1 .card2 .card3 .card4 {
-                height: 30px;
-                width: 50px;
-            }
-
-            .banner {
-                width: 1200px;
-                height: 200px;
-                flex-direction: row;
-            }
-
-            .banner hr {
-                width: 320px;
-            }
-
-            .banner h2 {
-                font-size: 30px;
-            }
-
-            .container-fluid {
-                padding-top: 20px;
-                background-image: url(img/redes.jpg);
-                border-radius: 15px;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(4, 1fr);
-                grid-column-gap: 0px;
-                grid-row-gap: 0px;
-                padding: 20px;
-
-            }
-
-            .tituloRedes {
-                grid-area: 1 / 1 / 2 / 4;
-                font-size: 65px;
-                padding-bottom: 10px;
-            }
-            .container-fluid .tituloRedes h2 {
-                font-size: 65px;
-                text-shadow: -5px -5px 5px #000;
-            }
-
-            .spotify {
-                grid-area: 2 / 1 / 5 / 2;
-                height: 450px;
-                width: 380px;
-            }
-
-            .twitter {
-                grid-area: 2 / 2 / 5 / 3;
-                border-style: groove;
-                overflow-y: scroll;
-                height: 450px;
-                width: 380px;
-
-            }
-
-            .instagram {
-                grid-area: 2 / 3 / 5 / 4;
-                border-style: groove;
-                overflow-y: scroll;
-                height: 450px;
-                width: 380px;
-            }
-
-
-
-            /*SECCION CONTACTO*/
-
-            .formContacto {
-                width: 1200px;
-            }
-
-            fieldset {
-                width: 300px;
-            }
-
-            /*SECCION ARTISTAS*/
-            .fotosartistas {
-                background-color: rgb(26, 25, 25);
-                border-radius: 25px;
-                border-style: groove;
-            }
-
-            /*SECCION PARTNERS*/
-            .partners {
-                margin-left: 55px;
-            }
-
-            .fotospartners {
-                text-align: center;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                grid-column-gap: 15px;
-                grid-row-gap: 15px;
-                margin-bottom: 50px;
-            }
-
-            .fotospartners:hover {
-                transform: scale(1.1);
-            }
+/*# sourceMappingURL=estilos.css.map */
